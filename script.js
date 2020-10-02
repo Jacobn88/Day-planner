@@ -9,7 +9,7 @@ $("#timeBlocks").append(outMostRow);
 var outMostCol = $("<div>");
 outMostCol.addClass("col-md-12");
 outMostRow.append(outMostCol);
-
+// dynamically creates layout
 for (var i = 0; i < 8; i++) {
     var innerRow = $("<div>");
     innerRow.addClass("row");
@@ -18,12 +18,14 @@ for (var i = 0; i < 8; i++) {
     var hourCol = $("<div>");
     hourCol.addClass("col-md-2");
     innerRow.append(hourCol);
+    hourCol.addClass("hour");
     hourCol.text(i + 9);
 
     var textCol = $("<div>");
     textCol.addClass("col-md-8");
     innerRow.append(textCol);
     var newTextArea = $("<textarea>");
+// assigns class to textArea bassed on the hour
     if (i + 9 > M.hour()) {
         newTextArea.addClass("future");
     } else if (i + 9 < M.hour()) {
@@ -46,6 +48,7 @@ for (var i = 0; i < 8; i++) {
     saveBtn.addClass("saveBtn");
     btnCol.append(saveBtn);
 }
+// saved used input to local storage
 function saveItem(event) {
     var element = event.target;
     var index = element.id.substring(4);
