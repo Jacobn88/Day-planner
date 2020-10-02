@@ -6,3 +6,6 @@
   <li>Take back your life!</li>
 </ul>
 
+https://jacobn88.github.io/Day-planner/
+
+![](images/day-planner.png)
